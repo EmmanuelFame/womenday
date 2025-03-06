@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Women's Day</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1, #fbc2eb, #a18cd1);
+            background-size: 300% 300%;
+            animation: bgAnimation 10s infinite alternate;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            height: 100vh; 
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+        @keyframes bgAnimation {
+            0% { background-position: left top; }
+            100% { background-position: right bottom; }
+        }
+        .container {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            position: relative;
+        }
+        h1 {
+            font-size: 4em;
+            text-shadow: 4px 4px 20px rgba(255, 255, 255, 1);
+            animation: glowText 3s infinite alternate;
+        }
+        @keyframes glowText {
+            0% { text-shadow: 0px 0px 10px white; }
+            100% { text-shadow: 0px 0px 25px white; }
+        }
+        .flower {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #ff4e50, #ff9a9e, #ffdde1);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
+            opacity: 0.8;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 1; }
+            50% { transform: translateY(-120px) rotate(180deg) scale(1.2); opacity: 0.7; }
+            100% { transform: translateY(0px) rotate(360deg) scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Women's Day! 🌸💖✨</h1>
+        <h2>С женским днем 🌸💖✨</h2>
+    </div>
+    <script>
+        function createFlower() {
+            const flower = document.createElement("div");
+            flower.classList.add("flower");
+            document.body.appendChild(flower);
+            
+            let x = Math.random() * window.innerWidth;
+            let y = Math.random() * window.innerHeight;
+            
+            flower.style.left = `${x}px`;
+            flower.style.top = `${y}px`;
+            
+            setTimeout(() => flower.remove(), 6000);
+        }
+        setInterval(createFlower, 300);
+    </script>
+</body>
+</html>
