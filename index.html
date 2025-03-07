@@ -18,19 +18,20 @@
                     overflow: hidden;
                     font-family: 'Poppins', sans-serif;
                     flex-direction: column;
+                    text-align: center;
                 }
                 @keyframes bgAnimation {
                     0% { background-position: left top; }
                     100% { background-position: right bottom; }
                 }
                 .container {
-                    text-align: center;
                     color: white;
                     font-size: 24px;
                     position: relative;
+                    padding: 20px;
                 }
                 h1 {
-                    font-size: 4em;
+                    font-size: clamp(2em, 5vw, 4em);
                     text-shadow: 4px 4px 20px rgba(255, 255, 255, 1);
                     animation: glowText 3s infinite alternate;
                 }
@@ -62,6 +63,8 @@
                     align-items: center;
                     gap: 10px;
                     backdrop-filter: blur(10px);
+                    flex-wrap: wrap;
+                    justify-content: center;
                 }
                 .music-player button {
                     background: #ff4e50;
